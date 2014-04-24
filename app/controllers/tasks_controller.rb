@@ -6,11 +6,13 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @tasks = Task.where(user_id: current_user)
+    @tasks = Hierarchy.set @tasks
   end
 
   # GET /tasks/1
   # GET /tasks/1.json
-  def show
+  def show    
+    @sub_tasks = @task.sub_tasks
   end
 
   # GET /tasks/new
@@ -75,6 +77,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :estimation)
+      params.require(:task).permit(:name, :due_date)
     end
 end
