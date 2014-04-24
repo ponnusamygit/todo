@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:show, :edit, :done, :update, :destroy]
 
   # GET /tasks
   # GET /tasks.json
@@ -20,6 +20,11 @@ class TasksController < ApplicationController
 
   # GET /tasks/1/edit
   def edit
+  end
+
+  # GET /tasks/1/done
+  def status
+    @task.update_attribute(:status, Task::Done)
   end
 
   # POST /tasks
