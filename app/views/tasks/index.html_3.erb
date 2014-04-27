@@ -1,0 +1,41 @@
+<style>
+  .sub_tasks{
+    margin-left: 2%
+  }
+  .done{color: green}
+  .edit{color: gray}
+  .delete{color: red}
+</style>
+<%- model_class = Task -%>
+<div class="page-header">
+  <h1>
+    <%=t '.title', :default => model_class.model_name.human.pluralize.titleize %>    
+  </h1>
+</div>
+<% @tasks.each do |task, subtasks=nil| %>           
+<div class='task_set'>
+    <h5 class='parent_task'>
+    <%= link_to task.name, task_path(task) %> <small class="mute"><%= task.due_date.strftime('%F') %></small>
+        <span class='actions'>
+          <!--<i class="icon-plus done"></i>-->
+          <i class="icon-ok done"></i>
+          <%= link_to raw("<i class='icon-edit edit'></i>"), edit_task_path(task) %>   
+          <%= link_to raw("<i class='icon-remove delete'></i>"), task_path(task), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }%>
+        </span>
+    </h5>
+  <% if subtasks.present? %>
+  <div class='sub_tasks'>
+  <% subtasks.each do |subtask| %>
+        <h5 class="sub_task">
+          <%= link_to subtask.name, task_path(subtask) %>
+        <span class='actions'>
+          <i class="icon-ok done"></i>
+          <%= link_to raw("<i class='icon-edit edit'></i>"), edit_task_path(subtask) %>            
+          <%= link_to raw("<i class='icon-remove delete'></i>"), task_path(subtask), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }%>
+        </span>
+      </h5>       
+    <% end %>
+  </div>
+  <% end %>  
+</div>
+<% end %>

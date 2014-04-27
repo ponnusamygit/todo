@@ -3,6 +3,7 @@ AppTodo::Application.routes.draw do
   resources :tasks do
     member do
       get :status
+      put :update_status
     end
   end
 

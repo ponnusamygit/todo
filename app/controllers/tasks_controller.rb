@@ -5,8 +5,8 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.where(user_id: current_user)
-    @tasks = Hierarchy.set @tasks
+    @tasks = Task.where(user_id: current_user).order('due_date desc')
+    #  @tasks = Hierarchy.set @tasks
   end
 
   # GET /tasks/1
@@ -25,8 +25,8 @@ class TasksController < ApplicationController
   end
 
   # GET /tasks/1/done
-  def status
-    @task.update_attribute(:status, Task::Done)
+  def update_status
+    @task.update_status(params[:status])
   end
 
   # POST /tasks

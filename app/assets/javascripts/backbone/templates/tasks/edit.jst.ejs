@@ -1,0 +1,20 @@
+<h1>Edit task</h1>
+
+<form id="edit-task" name="task">
+  <div class="field">
+    <label for="name"> name:</label>
+    <input type="text" name="name" id="name" value="<%= name %>" >
+  </div>
+
+  <div class="field">
+    <label for="due_date"> due_date:</label>
+    <input type="text" name="due_date" id="due_date" value="<%= due_date %>" >
+  </div>
+
+  <div class="actions">
+    <input type="submit" value="Update Task" />
+  </div>
+
+</form>
+
+<a href="#/index">Back</a>
