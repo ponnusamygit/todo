@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyText
-  estimation: 2014-04-18 00:28:08
-
-two:
-  name: MyText
-  estimation: 2014-04-18 00:28:08
