@@ -1,0 +1,14 @@
+<li class="list-group-item"><%= task.name %>
+	<small class="text-muted">
+		<%= date_time_tag task %>
+	</small>
+	<span class="label label-warning">Warning</span>
+	<span class="label label-danger">Danger</span>
+	<span class="pull-right">
+		<% unless task.done? %>
+			<span class="glyphicon glyphicon-ok task-done"></span>
+		<% end %>
+		<span class="glyphicon glyphicon-edit"></span>
+		<span class="glyphicon glyphicon-remove task-remove"></span>
+	</span>
+</li>
