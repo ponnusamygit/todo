@@ -2,8 +2,7 @@
 	<small class="text-muted">
 		<%= date_time_tag task %>
 	</small>
-	<span class="label label-warning">Warning</span>
-	<span class="label label-danger">Danger</span>
+	<%= labels_list task %>
 	<span class="pull-right">
 		<% unless task.done? %>
 			<span class="glyphicon glyphicon-ok task-done"></span>

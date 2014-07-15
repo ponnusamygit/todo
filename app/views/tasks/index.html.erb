@@ -1,184 +1,163 @@
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Taskboard</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-           <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <input class="form-control" placeholder="Search..." type="text">
-          </form>
-        </div>
-      </div>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+	<!-- Modal start -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+	      </div>
+	      <div class="modal-body">
+	        ...
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary">Save changes</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!-- Modal end -->
+
+	<div class="panel panel-danger">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Over Due</div>
+      <!-- List group -->
+      <ul class="list-group">
+        <li class="list-group-item">
+        	Cras justo odio
+			<small class="text-muted">
+				<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
+			</small>
+			<span class="label label-success">Success</span>
+			<span class="label label-info">Info</span>
+        	<span class="pull-right">
+        		<span class="glyphicon glyphicon-ok task-done"></span>
+        		<span class="glyphicon glyphicon-edit"></span>
+        		<span class="glyphicon glyphicon-remove task-remove"></span>
+        	</span>
+        </li>
+        <li class="list-group-item">Dapibus ac facilisis in
+			<small class="text-muted">
+				<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
+			</small>
+			<span class="label label-warning">Warning</span>
+			<span class="label label-danger">Danger</span>
+        	<span class="pull-right">
+        		<span class="glyphicon glyphicon-ok task-done"></span>
+        		<span class="glyphicon glyphicon-edit"></span>
+        		<span class="glyphicon glyphicon-remove task-remove"></span>
+        	</span>
+    	</li>
+      </ul>
     </div>
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <h5>Period <span class="glyphicon glyphicon-calendar pull-right"></span></h5>
-          <ul class="nav nav-sidebar">
-            <li><a href="#">Today <span class="badge pull-right">4</span></a></li>
-            <li><a href="#">Tomorrow <span class="badge pull-right">1</span></a></li>
-            <li><a href="#">This week <span class="badge pull-right">4</span></a></li>
-            <li><a href="#">Next Week <span class="badge pull-right">6</span></a></li>
-            <li><a href="#">This Month <span class="badge pull-right">10</span></a></li>
-            <li><a href="#">Next Month <span class="badge pull-right">14</span></a></li>
-          </ul>
-		  <h5>Label <span class="glyphicon glyphicon-plus pull-right"></span></h5>
-          <ul class="nav nav-sidebar">
-            <li><a href="">Shopping <span class="badge pull-right">2</span></a></li>
-            <li><a href="">Birtday <span class="badge pull-right">3</span></a></li>
-            <li><a href="">Home <span class="badge pull-right">7</span></a></li>
-            <li><a href="">Office <span class="badge pull-right">5</span></a></li>
-          </ul>
-        </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-		<div class="panel panel-danger">
-	      <!-- Default panel contents -->
-	      <div class="panel-heading">Over Due</div>
-	      <!-- List group -->
-	      <ul class="list-group">
-	        <li class="list-group-item">
-	        	Cras justo odio
-				<small class="text-muted">
-					<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
-				</small>
-				<span class="label label-success">Success</span>
-				<span class="label label-info">Info</span>
-	        	<span class="pull-right">
-	        		<span class="glyphicon glyphicon-ok task-done"></span>
-	        		<span class="glyphicon glyphicon-edit"></span>
-	        		<span class="glyphicon glyphicon-remove task-remove"></span>
-	        	</span>
-	        </li>
-	        <li class="list-group-item">Dapibus ac facilisis in
-				<small class="text-muted">
-					<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
-				</small>
-				<span class="label label-warning">Warning</span>
-				<span class="label label-danger">Danger</span>
-	        	<span class="pull-right">
-	        		<span class="glyphicon glyphicon-ok task-done"></span>
-	        		<span class="glyphicon glyphicon-edit"></span>
-	        		<span class="glyphicon glyphicon-remove task-remove"></span>
-	        	</span>
-        	</li>
-	      </ul>
-	    </div>
+	<div class="panel panel-primary">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Upcoming Tasks 
 
-		<div class="panel panel-primary">
-	      <!-- Default panel contents -->
-	      <div class="panel-heading">Upcoming Tasks <span class="glyphicon glyphicon-plus pull-right"></span></div>
-	      <!-- List group -->
-	      <ul class="list-group">
-	        <li class="list-group-item">
-	        	Cras justo odio
-				<small class="text-muted">
-					<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
-				</small>
-	        	<span class="label label-default">Default</span>
-				<span class="label label-primary">Primary</span>
-				<span class="label label-success">Success</span>
-				<span class="label label-info">Info</span>
-	        	<span class="pull-right">
-	        		<span class="glyphicon glyphicon-ok task-done"></span>
-	        		<span class="glyphicon glyphicon-edit"></span>
-	        		<span class="glyphicon glyphicon-remove task-remove"></span>
-	        	</span>
-	        </li>
-	        <li class="list-group-item">Dapibus ac facilisis in
-				<small class="text-muted">
-					<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
-				</small>
-				<span class="label label-success">Success</span>
-				<span class="label label-info">Info</span>
-				<span class="label label-warning">Warning</span>
-				<span class="label label-danger">Danger</span>
-	        	<span class="pull-right">
-	        		<span class="glyphicon glyphicon-ok task-done"></span>
-	        		<span class="glyphicon glyphicon-edit"></span>
-	        		<span class="glyphicon glyphicon-remove task-remove"></span>
-	        	</span>
-        	</li>
-	        <li class="list-group-item">Morbi leo risus
-				<small class="text-muted">
-					<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
-				</small>
-	        	<span class="label label-default">Default</span>
-				<span class="label label-primary">Primary</span>
-				<span class="label label-success">Success</span>
-				<span class="label label-info">Info</span>
-				<span class="label label-warning">Warning</span>
-				<span class="label label-danger">Danger</span>
-	        	<span class="pull-right">
-	        		<span class="glyphicon glyphicon-ok task-done"></span>
-	        		<span class="glyphicon glyphicon-edit"></span>
-	        		<span class="glyphicon glyphicon-remove task-remove"></span>
-	        	</span>
-        	</li>
-	        <li class="list-group-item">Porta ac consectetur ac
-				<small class="text-muted">
-					<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
-				</small>
-	        	<span class="label label-default">Default</span>
-				<span class="label label-primary">Primary</span>
-				<span class="label label-success">Success</span>
-				<span class="label label-info">Info</span>
-				<span class="label label-warning">Warning</span>
-				<span class="label label-danger">Danger</span>
-	        	<span class="pull-right">
-	        		<span class="glyphicon glyphicon-ok task-done"></span>
-	        		<span class="glyphicon glyphicon-edit"></span>
-	        		<span class="glyphicon glyphicon-remove task-remove"></span>
-	        	</span>
-        	</li>
-	        <li class="list-group-item">Vestibulum at eros
-				<small class="text-muted">
-					<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
-				</small>
-	        	<span class="label label-default">Default</span>
-				<span class="label label-primary">Primary</span>
-				<span class="label label-warning">Warning</span>
-				<span class="label label-danger">Danger</span>
-	        	<span class="pull-right">
-	        		<span class="glyphicon glyphicon-ok task-done"></span>
-	        		<span class="glyphicon glyphicon-edit"></span>
-	        		<span class="glyphicon glyphicon-remove task-remove"></span>
-	        	</span>
-        	</li>
-	      </ul>
-	    </div>
+      <!-- Button trigger modal -->
+	  <span class="glyphicon glyphicon-plus pull-right" data-toggle="modal" data-target="#myModal"></span>
 
-		<div class="panel panel-success">
-	      <!-- Default panel contents -->
-	      <div class="panel-heading">Recently Done</div>
-	      <!-- List group -->
-	      <ul class="list-group">
-	        <li class="list-group-item">
-	        	Cras justo odio
-				<small class="text-muted">
-					<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
-				</small>
-	        	<span class="label label-default">Default</span>
-				<span class="label label-primary">Primary</span>
-	        	<span class="pull-right">
-	        		<span class="glyphicon glyphicon-edit"></span>
-	        		<span class="glyphicon glyphicon-remove task-remove"></span>
-	        	</span>
-	        </li>
-	      </ul>
-	    </div>
-
-        </div>
       </div>
+      <!-- List group -->
+      <ul class="list-group">
+        <li class="list-group-item">
+        	Cras justo odio
+			<small class="text-muted">
+				<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
+			</small>
+        	<span class="label label-default">Default</span>
+			<span class="label label-primary">Primary</span>
+			<span class="label label-success">Success</span>
+			<span class="label label-info">Info</span>
+        	<span class="pull-right">
+        		<span class="glyphicon glyphicon-ok task-done"></span>
+        		<span class="glyphicon glyphicon-edit"></span>
+        		<span class="glyphicon glyphicon-remove task-remove"></span>
+        	</span>
+        </li>
+        <li class="list-group-item">Dapibus ac facilisis in
+			<small class="text-muted">
+				<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
+			</small>
+			<span class="label label-success">Success</span>
+			<span class="label label-info">Info</span>
+			<span class="label label-warning">Warning</span>
+			<span class="label label-danger">Danger</span>
+        	<span class="pull-right">
+        		<span class="glyphicon glyphicon-ok task-done"></span>
+        		<span class="glyphicon glyphicon-edit"></span>
+        		<span class="glyphicon glyphicon-remove task-remove"></span>
+        	</span>
+    	</li>
+        <li class="list-group-item">Morbi leo risus
+			<small class="text-muted">
+				<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
+			</small>
+        	<span class="label label-default">Default</span>
+			<span class="label label-primary">Primary</span>
+			<span class="label label-success">Success</span>
+			<span class="label label-info">Info</span>
+			<span class="label label-warning">Warning</span>
+			<span class="label label-danger">Danger</span>
+        	<span class="pull-right">
+        		<span class="glyphicon glyphicon-ok task-done"></span>
+        		<span class="glyphicon glyphicon-edit"></span>
+        		<span class="glyphicon glyphicon-remove task-remove"></span>
+        	</span>
+    	</li>
+        <li class="list-group-item">Porta ac consectetur ac
+			<small class="text-muted">
+				<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
+			</small>
+        	<span class="label label-default">Default</span>
+			<span class="label label-primary">Primary</span>
+			<span class="label label-success">Success</span>
+			<span class="label label-info">Info</span>
+			<span class="label label-warning">Warning</span>
+			<span class="label label-danger">Danger</span>
+        	<span class="pull-right">
+        		<span class="glyphicon glyphicon-ok task-done"></span>
+        		<span class="glyphicon glyphicon-edit"></span>
+        		<span class="glyphicon glyphicon-remove task-remove"></span>
+        	</span>
+    	</li>
+        <li class="list-group-item">Vestibulum at eros
+			<small class="text-muted">
+				<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
+			</small>
+        	<span class="label label-default">Default</span>
+			<span class="label label-primary">Primary</span>
+			<span class="label label-warning">Warning</span>
+			<span class="label label-danger">Danger</span>
+        	<span class="pull-right">
+        		<span class="glyphicon glyphicon-ok task-done"></span>
+        		<span class="glyphicon glyphicon-edit"></span>
+        		<span class="glyphicon glyphicon-remove task-remove"></span>
+        	</span>
+    	</li>
+      </ul>
     </div>
+
+	<div class="panel panel-success">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Recently Done</div>
+      <!-- List group -->
+      <ul class="list-group">
+        <li class="list-group-item">
+        	Cras justo odio
+			<small class="text-muted">
+				<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
+			</small>
+        	<span class="label label-default">Default</span>
+			<span class="label label-primary">Primary</span>
+        	<span class="pull-right">
+        		<span class="glyphicon glyphicon-edit"></span>
+        		<span class="glyphicon glyphicon-remove task-remove"></span>
+        	</span>
+        </li>
+      </ul>
+    </div>
+</div>

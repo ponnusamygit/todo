@@ -1,4 +1,6 @@
 Todo::Application.routes.draw do
+  resources :labels
+
   resources :tasks
 
   devise_for :users

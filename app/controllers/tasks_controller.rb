@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
+    @tasks = Task.group_by_due current_user
   end
 
   # GET /tasks/1
