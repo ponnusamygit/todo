@@ -1,11 +1,10 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Simple TODO application done with Rails 4 and Angular JS.
 
-Things you may want to cover:
+Things you may want to cover features:
 
-* Ruby version
+* Rails 4 Strong parameters
 
 * System dependencies
 

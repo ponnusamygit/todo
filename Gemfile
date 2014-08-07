@@ -39,7 +39,9 @@ end
 
 # Use unicorn as the app server
 # gem 'unicorn'
+gem 'thin'
 
+# gem "rails-backbone"
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
