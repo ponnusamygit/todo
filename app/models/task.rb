@@ -1,9 +1,11 @@
 class Task < ActiveRecord::Base
 	DONE = 'done'
 	OVERDUE = 'overdue'
-	UPCOMMING = 'upcomming'
+	UPCOMING = 'upcoming'
 
 	has_and_belongs_to_many :labels
+	belongs_to :user
+	scope :upcoming, lambda {|limit| where('due_date > ?', Time.now).order('due_date desc').limit(limit)}
 
 	# Group the task depends status
 	def self.group_by_due user
@@ -17,7 +19,7 @@ class Task < ActiveRecord::Base
 		elsif over_due?
 			OVERDUE
 		else
-			UPCOMMING
+			UPCOMING
 		end
 	end
 

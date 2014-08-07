@@ -30,8 +30,8 @@
 			<small class="text-muted">
 				<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
 			</small>
-			<span class="label label-success">Success</span>
-			<span class="label label-info">Info</span>
+			<span class="label label-success">Shopping</span>
+			<span class="label label-info">Home</span>
         	<span class="pull-right">
         		<span class="glyphicon glyphicon-ok task-done"></span>
         		<span class="glyphicon glyphicon-edit"></span>
@@ -42,8 +42,8 @@
 			<small class="text-muted">
 				<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
 			</small>
-			<span class="label label-warning">Warning</span>
-			<span class="label label-danger">Danger</span>
+			<span class="label label-warning">Birthday</span>
+			<span class="label label-danger">Importend</span>
         	<span class="pull-right">
         		<span class="glyphicon glyphicon-ok task-done"></span>
         		<span class="glyphicon glyphicon-edit"></span>
@@ -58,86 +58,14 @@
       <div class="panel-heading">Upcoming Tasks 
 
       <!-- Button trigger modal -->
-	  <span class="glyphicon glyphicon-plus pull-right" data-toggle="modal" data-target="#myModal"></span>
+	  <span class="glyphicon glyphicon-plus pull-right" data-toggle="modal" data-target="#myModal" style='cursor: pointer'> Add</span>
 
       </div>
       <!-- List group -->
       <ul class="list-group">
-        <li class="list-group-item">
-        	Cras justo odio
-			<small class="text-muted">
-				<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
-			</small>
-        	<span class="label label-default">Default</span>
-			<span class="label label-primary">Primary</span>
-			<span class="label label-success">Success</span>
-			<span class="label label-info">Info</span>
-        	<span class="pull-right">
-        		<span class="glyphicon glyphicon-ok task-done"></span>
-        		<span class="glyphicon glyphicon-edit"></span>
-        		<span class="glyphicon glyphicon-remove task-remove"></span>
-        	</span>
-        </li>
-        <li class="list-group-item">Dapibus ac facilisis in
-			<small class="text-muted">
-				<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
-			</small>
-			<span class="label label-success">Success</span>
-			<span class="label label-info">Info</span>
-			<span class="label label-warning">Warning</span>
-			<span class="label label-danger">Danger</span>
-        	<span class="pull-right">
-        		<span class="glyphicon glyphicon-ok task-done"></span>
-        		<span class="glyphicon glyphicon-edit"></span>
-        		<span class="glyphicon glyphicon-remove task-remove"></span>
-        	</span>
-    	</li>
-        <li class="list-group-item">Morbi leo risus
-			<small class="text-muted">
-				<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
-			</small>
-        	<span class="label label-default">Default</span>
-			<span class="label label-primary">Primary</span>
-			<span class="label label-success">Success</span>
-			<span class="label label-info">Info</span>
-			<span class="label label-warning">Warning</span>
-			<span class="label label-danger">Danger</span>
-        	<span class="pull-right">
-        		<span class="glyphicon glyphicon-ok task-done"></span>
-        		<span class="glyphicon glyphicon-edit"></span>
-        		<span class="glyphicon glyphicon-remove task-remove"></span>
-        	</span>
-    	</li>
-        <li class="list-group-item">Porta ac consectetur ac
-			<small class="text-muted">
-				<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
-			</small>
-        	<span class="label label-default">Default</span>
-			<span class="label label-primary">Primary</span>
-			<span class="label label-success">Success</span>
-			<span class="label label-info">Info</span>
-			<span class="label label-warning">Warning</span>
-			<span class="label label-danger">Danger</span>
-        	<span class="pull-right">
-        		<span class="glyphicon glyphicon-ok task-done"></span>
-        		<span class="glyphicon glyphicon-edit"></span>
-        		<span class="glyphicon glyphicon-remove task-remove"></span>
-        	</span>
-    	</li>
-        <li class="list-group-item">Vestibulum at eros
-			<small class="text-muted">
-				<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
-			</small>
-        	<span class="label label-default">Default</span>
-			<span class="label label-primary">Primary</span>
-			<span class="label label-warning">Warning</span>
-			<span class="label label-danger">Danger</span>
-        	<span class="pull-right">
-        		<span class="glyphicon glyphicon-ok task-done"></span>
-        		<span class="glyphicon glyphicon-edit"></span>
-        		<span class="glyphicon glyphicon-remove task-remove"></span>
-        	</span>
-    	</li>
+        <% @tasks.each do |task| %>
+          <%= render :partial => "task", :locals => {task: task} %>
+        <% end %>
       </ul>
     </div>
 
@@ -151,8 +79,8 @@
 			<small class="text-muted">
 				<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
 			</small>
-        	<span class="label label-default">Default</span>
-			<span class="label label-primary">Primary</span>
+        	<span class="label label-default">Not Importent</span>
+			<span class="label label-primary">Office</span>
         	<span class="pull-right">
         		<span class="glyphicon glyphicon-edit"></span>
         		<span class="glyphicon glyphicon-remove task-remove"></span>

@@ -10,7 +10,7 @@
   	<%= render :partial => 'common/navbar_fixed_top' %>
     <div class="container-fluid">
       <div class="row">
-      	<%= render :partial => 'common/sidebar' %>
+      	<%= render :partial => 'common/sidebar' if @current_user%>
       	<%= yield %>
       </div>
     </div>

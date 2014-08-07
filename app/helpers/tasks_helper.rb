@@ -4,10 +4,10 @@ module TasksHelper
 	end
 
 	def labels_list task
-		labels_str= ''
+		labels_str= []
 		task.labels.each do |label|
-			labels_str <<  "<span class=#{Label::COLOR_CLASSES[label.color]}>#{label.name}</span>"
+			labels_str <<  "<span class='#{Label::COLOR_CLASSES[label.color]}'>#{label.name}</span>"
 		end
-		labels_str.html_safe
+		labels_str.join(' ').html_safe
 	end
 end
