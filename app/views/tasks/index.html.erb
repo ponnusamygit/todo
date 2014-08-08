@@ -2,15 +2,23 @@
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 	<div class="panel panel-primary">
       <!-- Default panel contents -->
-      <div class="panel-heading">{{upcoming_title}} 
+      <div class="panel-heading" ng-bind='upcoming_title' ng-init='tasks=<%= @tasks.to_json %>'>
           <!-- Button trigger modal -->
   	      <span class="glyphicon glyphicon-plus pull-right"> Add</span>
       </div>
-      <!-- List group -->
+      <!-- List group -->      
       <ul class="list-group">
-        <% @tasks.each do |task| %>
-          <%= render :partial => "task", :locals => {task: task} %>
-        <% end %>
+        <li class="list-group-item" ng-repeat='task in tasks'>
+          {{task.name}}
+          <small class="text-muted">
+            {{task.due_date}}
+          </small>
+          <span class="pull-right">
+            <span class="glyphicon glyphicon-ok task-done"></span>
+            <span class="glyphicon glyphicon-edit"></span>
+            <span class="glyphicon glyphicon-remove task-remove"></span>
+          </span>
+        </li>
       </ul>
     </div>
 </div>
