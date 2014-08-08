@@ -1,5 +1,5 @@
 module TasksHelper
-	def date_time_tag task
+	def date_time_format task
 		raw "<span style='text-decoration: underline;'>#{ task.due_date.strftime("%B %d, %Y") }</span> - #{task.due_date.strftime("%I:%M %p")}"
 	end
 

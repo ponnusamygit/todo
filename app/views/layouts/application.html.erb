@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='taskBoard'>
 <head>
   <title>Todo - Taskboard</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  	<%= render :partial => 'common/navbar_fixed_top' %>
+<body ng-controller="TaskController">  
+    <%= render :partial => 'common/navbar_fixed_top' %>
     <div class="container-fluid">
       <div class="row">
-      	<%= render :partial => 'common/sidebar' if @current_user%>
-      	<%= yield %>
+        <%= render :partial => 'common/sidebar' if @current_user%>
+        <%= yield %>
       </div>
     </div>
+  <%= javascript_include_tag "ng_controllers"%>
 </body>
 </html>
