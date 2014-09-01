@@ -12,7 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require angular
+//= require angular-resource
 //= require bootstrap
 //= require docs
-//= require_tree .
+//= require tasks
+//= require controller
+//= require service

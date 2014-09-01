@@ -1,11 +1,15 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  # respond_to :json
 
+  def taskboard
+  end
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = current_user.tasks.upcoming(25)
+    # render :json => current_user.tasks.to_json
+    render json: Task.all.to_json
   end
 
   # GET /tasks/1
@@ -52,14 +56,8 @@ class TasksController < ApplicationController
     end
   end
 
-  # DELETE /tasks/1
-  # DELETE /tasks/1.json
   def destroy
-    @task.destroy
-    respond_to do |format|
-      format.html { redirect_to tasks_url }
-      format.json { head :no_content }
-    end
+    render json: @task.destroy
   end
 
   private
