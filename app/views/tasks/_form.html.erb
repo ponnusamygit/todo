@@ -1,38 +1,16 @@
-<%= form_for(@task) do |f| %>
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-      <h4 class="modal-title" id="myModalLabel"><%= @task.new_object? ? 'New Task' : 'Edit Task' %></h4>
+<form ng-submit="createTask()">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <h4 class="modal-title" id="myModalLabel">New Task</h4>
+  </div>
+  <div class="modal-body">
+    <div class="field">
+      <label for="task_name">Name</label><br>
+      <input type="text" name="task[name]" id="task_name" required="required">
     </div>
-    <div class="modal-body">
-      <% if @task.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
-          <ul>
-          <% @task.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
-      <div class="field">
-        <%= f.label :name %><br>
-        <%= f.text_field :name %>
-      </div>
-      <div class="field">
-        <%= f.label :description %><br>
-        <%= f.text_area :description %>
-      </div>
-      <div class="field">
-        <%= f.label :due_date %><br>
-        <%= f.time_select :due_date %>
-      </div>
-      <div class="field">
-        <%= f.label :user_id %><br>
-        <%= f.number_field :user_id %>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      <%= f.submit 'Save changes', class: "btn btn-primary" %>
-    </div>
-<% end %>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <button tupe='submit' class="btn btn-primary">Save</button>
+  </div>
+</form>
