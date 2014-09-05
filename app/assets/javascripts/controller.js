@@ -1,5 +1,6 @@
-app.controller('TaskCtrl', ['$scope', '$filter', '$http', 'Task', function($scope, $filter, $http, Task) {
+app.controller('TaskCtrl', ['$scope', '$filter', '$http', 'Task', 'Label', function($scope, $filter, $http, Task, Label) {
 	$scope.tasks = Task.all();
+	$scope.labels = Label.all();
 
 	$scope.deleteTask = function(Taskid, idx){
 		Task.delete(Taskid);
@@ -18,12 +19,12 @@ app.controller('TaskCtrl', ['$scope', '$filter', '$http', 'Task', function($scop
 
 	$scope.editTask = function(){
 		var editedTask = Task.edit($scope.editableTask);
-		$scope.tasks[$scope.editableTaskIndex] = editedTask
+		$scope.tasks[$scope.editableTaskIndex] = $scope.editableTask
 		$('#editTask').modal('hide')
 	};
 
 	$scope.getEditTask = function(idx){
-		$scope.editableTask = $scope.tasks[idx];
+		$scope.editableTask = angular.copy($scope.tasks[idx]);
 		$scope.editableTaskIndex = idx;
 	};
 }]);

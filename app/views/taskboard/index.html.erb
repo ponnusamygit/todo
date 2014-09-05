@@ -59,10 +59,9 @@
       </ul>
   <h5>Label <span class="glyphicon glyphicon-plus pull-right"></span></h5>
       <ul class="nav nav-sidebar">
-        <li><a href="">Shopping <span class="badge pull-right">2</span></a></li>
-        <li><a href="">Birtday <span class="badge pull-right">3</span></a></li>
-        <li><a href="">Home <span class="badge pull-right">7</span></a></li>
-        <li><a href="">Office <span class="badge pull-right">5</span></a></li>
+        <li ng-repeat="label in labels">
+          <a href="">{{label.name}} <span class="badge pull-right">{{label.task_count}}</span></a>
+        </li>
       </ul>
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -76,7 +75,7 @@
 				<small class="text-muted">
 					<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
 				</small>
-	        	<span class="label label-default">Shoping</span>
+      	<span class="label label-default">Shoping</span>
 				<span class="label label-primary">Impor</span>
 				<span class="label label-success">Office</span>
 				<span class="label label-info">Home</span>
