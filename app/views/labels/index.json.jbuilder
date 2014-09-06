@@ -1,4 +1,3 @@
 json.array!(@labels) do |label|
-  json.extract! label, :id, :name, :user_id
-  json.url label_url(label, format: :json)
+  json.extract! label, :id, :name, :color, Label.COLOR_CLASSES[label.color]
 end

@@ -5,7 +5,7 @@ class LabelsController < ApplicationController
   # GET /labels
   # GET /labels.json
   def index
-    render json: current_user.labels.with_task_count.to_json
+    render json: view_context.current_user_labels.to_json
   end
 
   # GET /labels/1
