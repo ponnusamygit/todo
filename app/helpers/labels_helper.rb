@@ -3,7 +3,7 @@ module LabelsHelper
 		json_hash = []
 		labels = current_user.labels.with_task_count
 		labels.each do |label|
-			json_hash << label.attributes.merge({color_class: Label::COLOR_CLASSES[label.color]})
+			json_hash << label.attributes.merge({btn_class: Label::BTN_CLASSES[label.color]})
 		end
 		json_hash
 	end

@@ -21,11 +21,13 @@
       </ul>
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <!-- Try any angular start-->
+      <!-- Try any angular end -->
 		  <div class="panel panel-primary">
 	      <!-- Default panel contents -->
 	      <div class="panel-heading">Upcoming Tasks <span class="glyphicon glyphicon-plus pull-right" data-toggle="modal" data-target="#addNewTask"></span></div>
 	      <!-- List group -->
-	      <ul class="list-group">
+	      <ul class="list-group label_group">
 	        <li class="list-group-item" ng-repeat='task in tasks | filter:searchTask'>
 	        	{{task.name}}
     				<small class="text-muted">

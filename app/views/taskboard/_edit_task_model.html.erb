@@ -9,8 +9,17 @@
         </div>
         <div class="modal-body">
           <div class="field">
-            <label for="edit_task_name">Name</label><br>
-            <input type="text" id="edit_task_name" required="required" ng-model='editableTask.name'>
+            <label for="task_name">Name</label>
+            <input type="text" class="form-control" placeholder="Enter task name" id="edit_task_name" required="required" ng-model='editableTask.name'>
+          </div>
+          <br>
+          <div class="field">
+            <label>Select Labels</label><br>
+            <div class="btn-group btn-group-xs label_group" data-toggle="buttons">  
+              <label ng-repeat="label in labels" ng-class="label.btn_class">    
+                <input type="checkbox" name="options" id="option1"> {{label.name}}
+              </label>  
+            </div> 
           </div>
         </div>
         <div class="modal-footer">

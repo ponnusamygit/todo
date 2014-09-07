@@ -6,6 +6,9 @@ class Label < ActiveRecord::Base
 	COLOR_CLASSES = {'red' => 'label label-danger', 
 		'blue' => 'label label-info', 'orange' => 'label label-warning', 
 		'green' => 'label label-success', 'gray' => 'label label-default'}
+	BTN_CLASSES = {'red' => 'btn btn-danger', 
+		'blue' => 'btn btn-info', 'orange' => 'btn btn-warning', 
+		'green' => 'btn btn-success', 'gray' => 'btn btn-gray'}
 
 	validates :color, :inclusion => COLORS
 
