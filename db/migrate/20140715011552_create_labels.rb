@@ -7,10 +7,10 @@ class CreateLabels < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :labels_tasks, :id => false do |t|
-    	t.integer :label_id
-    	t.integer :task_id
-    end
+    create_join_table :labels, :tasks do |t|
+      t.index [:label_id, :task_id]
+      t.index [:task_id, :label_id]
+    end
 
   end
 end
