@@ -1,49 +1,5 @@
-<!-- New task Modal -->
-<div class="modal fade" id="addNewTask" tabindex="-1" role="dialog" aria-labelledby="addMyTask" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <form ng-submit="createTask()">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-          <h4 class="modal-title" id="addMyTask">New Task</h4>
-        </div>
-        <div class="modal-body">
-          <div class="field">
-            <label for="task_name">Name</label><br>
-            <input type="text" id="new_task_name" ng-required='true' ng-model='new_task_name'>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button tupe='submit' class="btn btn-primary">Save</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-<!-- Edit task Modal -->
-<div class="modal fade" id="editTask" tabindex="-1" role="dialog" aria-labelledby="editMyTask" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <form ng-submit="editTask()">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-          <h4 class="modal-title" id="editMyTask">Edit Task</h4>
-        </div>
-        <div class="modal-body">
-          <div class="field">
-            <label for="edit_task_name">Name</label><br>
-            <input type="text" id="edit_task_name" required="required" ng-model='editableTask.name'>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button tupe='submit' class="btn btn-primary">Save</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+<%= render :partial => "new_task_model" %>
+<%= render :partial => "edit_task_model" %>
 <!-- Page Container -->
 <div class="container-fluid">
   <div class="row">
@@ -57,7 +13,7 @@
         <li><a href="#">This Month <span class="badge pull-right">10</span></a></li>
         <li><a href="#">Next Month <span class="badge pull-right">14</span></a></li>
       </ul>
-  <h5>Label <span class="glyphicon glyphicon-plus pull-right"></span></h5>
+      <h5>Label <span class="glyphicon glyphicon-plus pull-right"></span></h5>
       <ul class="nav nav-sidebar">
         <li ng-repeat="label in labels">
           <a href="">{{label.name}} <span class="badge pull-right">{{label.task_count}}</span></a>
@@ -72,13 +28,12 @@
 	      <ul class="list-group">
 	        <li class="list-group-item" ng-repeat='task in tasks | filter:searchTask'>
 	        	{{task.name}}
-				<small class="text-muted">
-					<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
-				</small>
-      	<span class="label label-default">Shoping</span>
-				<span class="label label-primary">Impor</span>
-				<span class="label label-success">Office</span>
-				<span class="label label-info">Home</span>
+    				<small class="text-muted">
+    					<span style="text-decoration: underline;">March 14, 2014</span> - 02:15 am
+    				</small>
+            <span ng-repeat="label in task.labels_classes" ng-class='label.color_class'> 
+              {{label.name}} 
+            </span>
 	        	<span class="pull-right">
 	        		<span class="glyphicon glyphicon-ok task-done"></span>
 	        		<span class="glyphicon glyphicon-edit" ng-click='getEditTask($index)'  data-toggle="modal" data-target="#editTask"></span>

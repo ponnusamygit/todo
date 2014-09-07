@@ -100,3 +100,6 @@ body {
 .task-remove{
 	color: red;
 }
+.label {
+    margin: 0 2px;
+}

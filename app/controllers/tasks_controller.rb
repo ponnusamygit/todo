@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:update, :destroy]
 
   def index
-    render json: current_user.tasks.to_json
+    render json: view_context.current_user_tasks_include_labels.to_json
   end
 
   def create
@@ -26,6 +26,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :due_date)
+      params.require(:task).permit(:name, :due_date, :label_ids)
     end
 end

@@ -10,4 +10,15 @@ module TasksHelper
 		end
 		labels_str.join(' ').html_safe
 	end
+
+	def current_user_tasks_include_labels
+		tasks_labels = current_user.tasks.includes(:labels)
+		tasks_labels.map do |task|
+			task.attributes.merge({
+				labels_classes: task.labels.map do |label|
+						{name: label.name, color_class: Label::COLOR_CLASSES[label.color]}				
+					end 
+				})
+		end 
+	end
 end

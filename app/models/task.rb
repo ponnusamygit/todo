@@ -6,7 +6,6 @@ class Task < ActiveRecord::Base
 	has_and_belongs_to_many :labels
 	belongs_to :user
 	scope :upcoming, lambda {|limit| where('due_date >= ?', Time.now).order('due_date').limit(limit)}
-
 	# Group the task depends status
 	def self.group_by_due user
 		where(user_id: user.id).group_by{|task| task.current_groupby_status}
