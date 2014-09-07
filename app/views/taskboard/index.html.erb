@@ -16,7 +16,7 @@
       <h5>Label <span class="glyphicon glyphicon-plus pull-right"></span></h5>
       <ul class="nav nav-sidebar">
         <li ng-repeat="label in labels">
-          <a href="">{{label.name}} <span class="badge pull-right">{{label.task_count}}</span></a>
+          <a href="">{{label.name}} <span class="badge badge-{{label.color}} pull-right">{{label.task_count}}</span></a>
         </li>
       </ul>
     </div>
