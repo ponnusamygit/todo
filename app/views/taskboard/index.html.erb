@@ -4,7 +4,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-3 col-md-2 sidebar">
-      <h5>Period <span class="glyphicon glyphicon-calendar pull-right"></span></h5>
+      <h5>Period <span class="pull-right"><i class="fa fa-plus-circle"></i></span></h5>
       <ul class="nav nav-sidebar">
         <li><a href="#">Today <span class="badge pull-right">4</span></a></li>
         <li><a href="#">Tomorrow <span class="badge pull-right">1</span></a></li>
@@ -13,7 +13,7 @@
         <li><a href="#">This Month <span class="badge pull-right">10</span></a></li>
         <li><a href="#">Next Month <span class="badge pull-right">14</span></a></li>
       </ul>
-      <h5>Label <span class="glyphicon glyphicon-plus pull-right"></span></h5>
+      <h5>Label <span class="pull-right"><i class="fa fa-plus-circle"></i></span></h5>
       <ul class="nav nav-sidebar">
         <li ng-repeat="label in labels">
           <a href="">{{label.name}} <span class="badge badge-{{label.color}} pull-right">{{label.task_count}}</span></a>
@@ -25,7 +25,7 @@
       <!-- Try any angular end -->
 		  <div class="panel panel-primary">
 	      <!-- Default panel contents -->
-	      <div class="panel-heading">Upcoming Tasks <span class="glyphicon glyphicon-plus pull-right" data-toggle="modal" data-target="#addNewTask"></span></div>
+	      <div class="panel-heading">Upcoming Tasks <span class="pull-right" data-toggle="modal" data-target="#addNewTask"><i class="fa fa-plus-circle"></i></span></div>
 	      <!-- List group -->
 	      <ul class="list-group label_group">
 	        <li class="list-group-item" ng-repeat='task in tasks | filter:searchTask'>
@@ -37,9 +37,9 @@
               {{label.name}} 
             </span>
 	        	<span class="pull-right">
-	        		<span class="glyphicon glyphicon-ok task-done"></span>
-	        		<span class="glyphicon glyphicon-edit" ng-click='getEditTask($index)'  data-toggle="modal" data-target="#editTask"></span>
-	        		<span class="glyphicon glyphicon-remove task-remove" ng-click='deleteTask(task.id, $index)'></span>
+	        		<span class="task-done"><i class="fa fa-check-square-o"></i> </span> 
+	        		<span ng-click='getEditTask($index)'  data-toggle="modal" data-target="#editTask"> &nbsp; <i class="fa fa-pencil-square-o"></i> &nbsp; </span> 
+	        		<span class="task-remove" ng-click='deleteTask(task.id, $index)'><i class="fa fa-bitbucket"></i> </span> 
 	        	</span>
 	        </li>
 	      </ul>

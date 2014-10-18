@@ -12,10 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require angular
 //= require angular-resource
-//= require bootstrap
-//= require docs
 //= require tasks
 //= require controller
 //= require service
