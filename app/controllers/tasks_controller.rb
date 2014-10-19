@@ -7,7 +7,8 @@ class TasksController < ApplicationController
   end
 
   def create
-    render json: current_user.tasks.create!(task_params)
+    task = current_user.tasks.create!(task_params.merge(label_ids: params[:label_ids]))
+    render json: task.attributes.merge(label_ids: task.label_ids)
   end
 
   def update
@@ -26,6 +27,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :due_date, :label_ids)
+      params.require(:task).permit(:name, :description, :due_date, :label_ids)
     end
 end

@@ -14,11 +14,7 @@ module TasksHelper
 	def current_user_tasks_include_labels
 		tasks_labels = current_user.tasks.includes(:labels)
 		tasks_labels.map do |task|
-			task.attributes.merge({
-				labels_classes: task.labels.map do |label|
-						{name: label.name, color_class: Label::COLOR_CLASSES[label.color]}				
-					end 
-				})
+			task.attributes.merge({label_ids: task.label_ids})
 		end 
 	end
 end

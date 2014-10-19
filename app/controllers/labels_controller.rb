@@ -1,6 +1,7 @@
 class LabelsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_label, only: [:show, :edit, :update, :destroy]
+  before_filter :redirect_to_root
 
   # GET /labels
   # GET /labels.json

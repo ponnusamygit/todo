@@ -13,7 +13,7 @@ class Label < ActiveRecord::Base
 	validates :color, :inclusion => COLORS
 
 	scope :with_task_count, -> { 
-							joins("left join labels_tasks on labels_tasks.label_id=labels.id left join tasks on tasks.id = labels_tasks.task_id")
-						.group('tasks.id, labels.id').select("count(tasks.id) as task_count, labels.id, labels.name, labels.color")}
+							joins("left join labels_tasks on labels_tasks.label_id=labels.id")
+						.group('labels.id').select("count(labels_tasks.task_id) task_count, labels.id, labels.name, labels.color")}
 	
 end

@@ -9,15 +9,17 @@
       </button>
       <a class="navbar-brand" href="/">Taskboard <i class="fa fa-check-square-o"></i></a>
     </div>
-    <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-right">
-       <li><a href="#">Settings</a></li>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Help</a></li>
-      </ul>
-      <form class="navbar-form navbar-right">
-        <input class="form-control" placeholder="Search..." type="text" ng-model='searchTask'>
-      </form>
-    </div>
+    <% if user_signed_in? %>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+         <li><a href="#">Settings</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><%= link_to 'Sign Out', destroy_user_session_path, method: 'DELETE' %></li>
+        </ul>
+        <form class="navbar-form navbar-right">
+          <input class="form-control" placeholder="Search..." type="text" ng-model='searchTask'>
+        </form>
+      </div>
+    <% end %>
   </div>
 </div>
