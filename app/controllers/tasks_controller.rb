@@ -12,7 +12,8 @@ class TasksController < ApplicationController
   end
 
   def update
-    render json: @task.update(task_params)
+    @task.update(task_params.merge(label_ids: params[:label_ids]))
+    render json: @task.attributes.merge(label_ids: @task.label_ids)
   end
 
   def destroy

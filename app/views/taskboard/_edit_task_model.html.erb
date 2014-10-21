@@ -16,8 +16,8 @@
           <div class="field">
             <label>Select Labels</label><br>
             <div class="btn-group btn-group-xs label_group" data-toggle="buttons">  
-              <label ng-repeat="label in labels" ng-class="label.btn_class">    
-                <input type="checkbox" name="options" > {{label.name}}
+              <label ng-repeat="label in editLabels" ng-class="label.btn_class">    
+                <input type="checkbox" name="options" ng-checked="label.checked" ng-model="label.checked"  value='{{label.id}}'> {{label.name}}
               </label>  
             </div> 
           </div>
