@@ -1,5 +1,6 @@
 <%= render :partial => "new_task_model" %>
 <%= render :partial => "edit_task_model" %>
+<%= render :partial => "labels_curd_model" %>
 <!-- Page Container -->
 <div class="container-fluid">
   <div class="row">
@@ -15,7 +16,7 @@
         <li><a href="#">Next Month <span class="badge pull-right">14</span></a></li>
       </ul>
  -->
-      <h5>Label <span class="pull-right"><i class="curptr fa fa-plus-circle"></i></span></h5>
+      <h5>Label <span class="pull-right" data-toggle="modal" data-target="#labels_curd_model"><i class="curptr fa fa-plus-circle"></i></span></h5>
       <ul class="nav nav-sidebar">
         <li ng-repeat="label in labels">
           <a href="">{{label.name}} <span class="badge badge-{{label.color}} pull-right">{{label.task_count}}</span></a>
